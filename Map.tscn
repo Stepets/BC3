@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Map.gd" type="Script" id=1]
+[ext_resource path="res://orbit_data.gd" type="Script" id=2]
+[ext_resource path="res://planet_data.gd" type="Script" id=3]
+[ext_resource path="res://Planet.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 3 )
+name = "TP"
+color = Color( 0.196078, 0.494118, 0.952941, 1 )
+radius = 20
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 2 )
+host = NodePath("../Star")
+radius = 200
+angular_speed = 0.105
+angle = 0.0
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 3 )
+name = "Star"
+color = Color( 0.945098, 0.513726, 0.129412, 1 )
+radius = 100
+
+[node name="Map" type="Node2D"]
+script = ExtResource( 1 )
+color = Color( 0.2, 0.0980392, 0.254902, 1 )
+
+[node name="Planet" parent="." instance=ExtResource( 4 )]
+data_r = SubResource( 1 )
+orbit_r = SubResource( 2 )
+
+[node name="Star" parent="." instance=ExtResource( 4 )]
+position = Vector2( 500, 300 )
+data_r = SubResource( 3 )

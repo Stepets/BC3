@@ -1,0 +1,56 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Map",
+"language": "GDScript",
+"path": "res://Map.gd"
+}, {
+"base": "Resource",
+"class": "OrbitData",
+"language": "GDScript",
+"path": "res://orbit_data.gd"
+}, {
+"base": "Node2D",
+"class": "Planet",
+"language": "GDScript",
+"path": "res://Planet.gd"
+}, {
+"base": "Resource",
+"class": "PlanetData",
+"language": "GDScript",
+"path": "res://planet_data.gd"
+}, {
+"base": "Popup",
+"class": "PlanetUI",
+"language": "GDScript",
+"path": "res://PlanetUI.gd"
+} ]
+_global_script_class_icons={
+"Map": "",
+"OrbitData": "",
+"Planet": "",
+"PlanetData": "",
+"PlanetUI": ""
+}
+
+[application]
+
+config/name="Tycoon"
+config/icon="res://icon.png"
+
+[autoload]
+
+GlobalCanvasLayer="*res://GlobalCanvasLayer.tscn"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
