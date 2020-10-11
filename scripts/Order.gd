@@ -50,10 +50,12 @@ func updateList():
 	
 	var currentShips = get_parent().currentShips
 	for shipId in currentShips:
-		var ship = currentShips[shipId]
+		var ship : Ship = currentShips[shipId]
 		if(ship.status == 'free'):
 			#var shipIcon = ship.getIcon()
 			
+			var idx = list.get_item_count()
 			list.add_item(str(ship.id))
-			list.set_item_metadata(list.get_item_count()-1, ship.id)
+			list.set_item_icon(idx, ship.getIcon())
+			list.set_item_metadata(idx, ship.id)
 	pass

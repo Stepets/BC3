@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Ship
 
 var smoothSpeed = 0.5
 
@@ -13,8 +14,12 @@ var capacity = 10
 var destinationDifference = Vector2()
 var velocity = Vector2()
 
+var ship_data : ShipData = preload("res://resource/medium_fighter.tres")
+
 func _ready():
 	add_to_group("ships")
+	
+	$Sprite.texture = ship_data.texture
 	
 	set_position(Vector2((id-1)*100, 50))
 	
@@ -36,10 +41,7 @@ func moneToDestination(delta):
 	pass
 
 func getIcon():
-	
-	return  get_node('Sprite').texture
-	
-	pass
+	return  ship_data.icon
 
 func start(order):
 	status = 'work'
@@ -53,3 +55,6 @@ func stop():
 	currentOrder = null
 	
 	pass
+
+static func sc():
+	return load("res://scenes/Ship.tscn").instance()

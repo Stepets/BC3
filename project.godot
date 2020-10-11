@@ -33,13 +33,25 @@ _global_script_classes=[ {
 "class": "PlanetUI",
 "language": "GDScript",
 "path": "res://scripts/PlanetUI.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Ship",
+"language": "GDScript",
+"path": "res://scripts/Ship.gd"
+}, {
+"base": "Resource",
+"class": "ShipData",
+"language": "GDScript",
+"path": "res://scripts/ship_data.gd"
 } ]
 _global_script_class_icons={
 "Map": "",
 "OrbitData": "",
 "Planet": "",
 "PlanetData": "",
-"PlanetUI": ""
+"PlanetUI": "",
+"Ship": "",
+"ShipData": ""
 }
 
 [application]

@@ -37,7 +37,6 @@ var currentShips  = {}
 var currentOrders = {}
 
 func _ready():
-	shipTemplate       = preload("res://scenes/Ship.tscn")
 	orderTemplate      = preload("res://scenes/Order.tscn")
 	
 	initShips()
@@ -54,7 +53,7 @@ func initShips():
 	pass
 
 func addShip(shipData):
-	var ship = shipTemplate.instance()
+	var ship : Ship = Ship.sc()
 	ship.id = shipData.id
 	
 	currentShips[ship.id] = ship
