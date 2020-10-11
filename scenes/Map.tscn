@@ -1,37 +1,17 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Map.gd" type="Script" id=1]
-[ext_resource path="res://scripts/orbit_data.gd" type="Script" id=2]
-[ext_resource path="res://scripts/planet_data.gd" type="Script" id=3]
-[ext_resource path="res://scenes/Planet.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/Viewport.gd" type="Script" id=2]
+[ext_resource path="res://scenes/State.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/GlobalCanvasLayer.tscn" type="PackedScene" id=4]
 
-[sub_resource type="Resource" id=1]
-script = ExtResource( 3 )
-name = "TP"
-color = Color( 0.196078, 0.494118, 0.952941, 1 )
-radius = 20
-
-[sub_resource type="Resource" id=2]
+[node name="Map" type="Viewport"]
 script = ExtResource( 2 )
-host = NodePath("../Star")
-radius = 200
-angular_speed = 0.105
-angle = 0.0
 
-[sub_resource type="Resource" id=3]
-script = ExtResource( 3 )
-name = "Star"
-color = Color( 0.945098, 0.513726, 0.129412, 1 )
-radius = 100
+[node name="State" parent="." instance=ExtResource( 3 )]
 
-[node name="Map" type="Node2D"]
+[node name="Background" type="Node2D" parent="."]
 script = ExtResource( 1 )
 color = Color( 0.2, 0.0980392, 0.254902, 1 )
 
-[node name="Planet" parent="." instance=ExtResource( 4 )]
-data_r = SubResource( 1 )
-orbit_r = SubResource( 2 )
-
-[node name="Star" parent="." instance=ExtResource( 4 )]
-position = Vector2( 500, 300 )
-data_r = SubResource( 3 )
+[node name="CanvasLayer" parent="." instance=ExtResource( 4 )]

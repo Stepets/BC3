@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "CanvasLayer",
+"class": "GlobalCanvasLayer",
+"language": "GDScript",
+"path": "res://scripts/GlobalCanvasLayer.gd"
+}, {
 "base": "Node2D",
 "class": "Map",
 "language": "GDScript",
@@ -19,7 +24,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/orbit_data.gd"
 }, {
-"base": "Node2D",
+"base": "Node",
 "class": "Planet",
 "language": "GDScript",
 "path": "res://scripts/Planet.gd"
@@ -34,6 +39,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/PlanetUI.gd"
 }, {
+"base": "Node2D",
+"class": "PlanetView",
+"language": "GDScript",
+"path": "res://scripts/PlanetView.gd"
+}, {
+"base": "ViewportContainer",
+"class": "SceneManager",
+"language": "GDScript",
+"path": "res://scripts/Game.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Ship",
 "language": "GDScript",
@@ -43,26 +58,37 @@ _global_script_classes=[ {
 "class": "ShipData",
 "language": "GDScript",
 "path": "res://scripts/ship_data.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://scripts/State.gd"
+}, {
+"base": "Viewport",
+"class": "ViewportWithContext",
+"language": "GDScript",
+"path": "res://scripts/Viewport.gd"
 } ]
 _global_script_class_icons={
+"GlobalCanvasLayer": "",
 "Map": "",
 "OrbitData": "",
 "Planet": "",
 "PlanetData": "",
 "PlanetUI": "",
+"PlanetView": "",
+"SceneManager": "",
 "Ship": "",
-"ShipData": ""
+"ShipData": "",
+"State": "",
+"ViewportWithContext": ""
 }
 
 [application]
 
 config/name="Tycoon"
-run/main_scene="res://scenes/Main.tscn"
+run/main_scene="res://scenes/Game.tscn"
 config/icon="res://icon.png"
-
-[autoload]
-
-GlobalCanvasLayer="*res://scenes/GlobalCanvasLayer.tscn"
 
 [display]
 
