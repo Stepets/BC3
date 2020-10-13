@@ -44,6 +44,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/PlanetView.gd"
 }, {
+"base": "Resource",
+"class": "ProductData",
+"language": "GDScript",
+"path": "res://scripts/product_data.gd"
+}, {
+"base": "Resource",
+"class": "ProductionData",
+"language": "GDScript",
+"path": "res://scripts/production_data.gd"
+}, {
 "base": "ViewportContainer",
 "class": "SceneManager",
 "language": "GDScript",
@@ -59,10 +69,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/ship_data.gd"
 }, {
+"base": "Resource",
+"class": "SpaceportData",
+"language": "GDScript",
+"path": "res://scripts/spaceport_data.gd"
+}, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
 "path": "res://scripts/State.gd"
+}, {
+"base": "Resource",
+"class": "StorageData",
+"language": "GDScript",
+"path": "res://scripts/storage_data.gd"
 }, {
 "base": "Viewport",
 "class": "ViewportWithContext",
@@ -77,10 +97,14 @@ _global_script_class_icons={
 "PlanetData": "",
 "PlanetUI": "",
 "PlanetView": "",
+"ProductData": "",
+"ProductionData": "",
 "SceneManager": "",
 "Ship": "",
 "ShipData": "",
+"SpaceportData": "",
 "State": "",
+"StorageData": "",
 "ViewportWithContext": ""
 }
 

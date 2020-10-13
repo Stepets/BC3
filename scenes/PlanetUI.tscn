@@ -16,13 +16,78 @@ script = ExtResource( 1 )
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Button" type="Button" parent="Panel"]
-margin_right = 317.0
-margin_bottom = 197.0
+[node name="CloseButton" type="Button" parent="Panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -120.0
+margin_top = -40.0
+text = "Close"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="PlanetNameLabel" type="Label" parent="Panel"]
 margin_left = 764.0
 margin_top = 3.0
 margin_right = 855.0
 margin_bottom = 36.0
+
+[node name="SpaceportsGridContainer" type="GridContainer" parent="Panel"]
+anchor_bottom = 1.0
+margin_left = 11.0
+margin_top = 55.0
+margin_right = 235.0
+margin_bottom = -11.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpaceportsLabel" type="Label" parent="Panel"]
+margin_left = 50.8542
+margin_top = 39.2001
+margin_right = 107.854
+margin_bottom = 53.2001
+text = "Spaceports"
+
+[node name="ProductionsGridContainer" type="GridContainer" parent="Panel"]
+anchor_bottom = 1.0
+margin_left = 246.201
+margin_top = 55.0
+margin_right = 470.201
+margin_bottom = -11.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProductionsLabel" type="Label" parent="Panel"]
+margin_left = 286.0
+margin_top = 39.0
+margin_right = 362.0
+margin_bottom = 53.0
+text = "Productions"
+
+[node name="StoragesGridContainer2" type="GridContainer" parent="Panel"]
+anchor_bottom = 1.0
+margin_left = 481.402
+margin_top = 55.0
+margin_right = 705.402
+margin_bottom = -11.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StoragesLabel" type="Label" parent="Panel"]
+margin_left = 521.0
+margin_top = 39.0
+margin_right = 575.0
+margin_bottom = 53.0
+text = "Storages"
+__meta__ = {
+"_edit_use_anchors_": false
+}
