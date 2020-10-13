@@ -18,4 +18,3 @@ func _ready():
 
 func place_centered(view : PlanetView) -> void:
 	view.position = get_viewport().size / 2
-

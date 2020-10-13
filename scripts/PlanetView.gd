@@ -23,17 +23,22 @@ func _process(delta):
 		var host_view = context.find(host, "PlanetView")
 		set_global_position(host_view.get_global_position() + Vector2(data.orbit_radius * cos(data.angle), data.orbit_radius * sin(data.angle)))
 
-func _unhandled_input(event):
+func _input(event):
 	if event is InputEventMouseButton and event.pressed and not event.is_echo() and event.button_index == BUTTON_LEFT:
 		print(get_global_position() - event.position)
 		if (get_global_position() - event.position).length() < data.radius:
 			var planet_ui : PlanetUI = PlanetUI.sc()
+			planet_ui.fill(data)
 			var context : ViewportWithContext = get_viewport()
 			var canvas_layer : GlobalCanvasLayer = context.find(null, "GlobalCanvasLayer")
 			canvas_layer.set_ui(planet_ui)
 			planet_ui.show()
 			get_tree().paused = true
 			get_tree().set_input_as_handled()
+
+func _unhandled_input(event):
+	print("unhandled input", event)
+	_input(event)
 
 static func mew():
 	return load("res://scenes/Planet.tscn").instance()

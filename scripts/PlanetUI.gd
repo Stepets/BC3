@@ -7,6 +7,9 @@ func _ready():
 func on_close():
 	get_tree().paused = false
 
+func fill(planet : PlanetData) -> void:
+	$Panel/Label.text = planet.name
+
 static func sc():
-	return load("res://PlanetUI.tscn").instance()
+	return load("res://scenes/PlanetUI.tscn").instance()
 
