@@ -4,3 +4,47 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="OrdersLabel" type="Label" parent="."]
+margin_left = 1728.0
+margin_right = 1920.0
+margin_bottom = 64.0
+text = "Orders"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Orders" type="ScrollContainer" parent="."]
+margin_left = 1728.0
+margin_top = 64.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShipsLabel" type="Label" parent="."]
+margin_right = 192.0
+margin_bottom = 64.0
+text = "Ships"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ships" type="ScrollContainer" parent="."]
+margin_top = 64.0
+margin_right = 192.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
