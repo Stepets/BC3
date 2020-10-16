@@ -2,6 +2,7 @@ extends Node2D
 
 var shipTemplate
 var orderTemplate
+var shipListItemTemplate
 
 var shipsData = {
 	1 : {
@@ -37,7 +38,8 @@ var currentShips  = {}
 var currentOrders = {}
 
 func _ready():
-	orderTemplate      = preload("res://scenes/Order.tscn")
+	orderTemplate        = preload("res://scenes/Order.tscn")
+	shipListItemTemplate = preload("res://scenes/ShipListItem.tscn")
 	
 	initShips()
 	initOrders()
@@ -50,6 +52,7 @@ func initShips():
 		var shipData = shipsData[shipId]
 		addShip(shipData)
 	
+	updateShips()
 	pass
 
 func addShip(shipData):
@@ -60,7 +63,19 @@ func addShip(shipData):
 	
 	add_child(ship)
 	pass
-
+	
+func updateShips():
+	for shipId in currentShips:
+		var ship = currentShips[shipId]
+		var shipItem = shipListItemTemplate.instance() 
+		#shipItem.get_node('Sprite').texture = ship.get_node('Sprite').texture
+		shipItem.get_node('Id').text = str(ship.id)
+		shipItem.get_node('Speed').text = str(ship.speed)
+		shipItem.get_node('Capacity').text = str(ship.capacity)
+		get_node("Ships").add_child(shipItem)
+		shipItem.set_position(Vector2(0,(ship.id-1)*150))
+	pass
+	
 func initOrders():
 	get_tree().call_group("orders", "queue_free")
 	for orderId in ordersData:
@@ -74,17 +89,15 @@ func addOrder(orderData):
 	order.id = orderData.id
 	order.title = orderData.title
 	order.destination = orderData.destination
-	order.destination = orderData.destination
 	
 	currentOrders[order.id] = order
 	
-	add_child(order)
+	get_node("Orders").add_child(order)
 	order.updateList()
 	
 	pass
 	
 func updateOrders():
-	print(1)
 	for orderId in currentOrders:
 		var order = currentOrders[orderId]
 		order.updateList()

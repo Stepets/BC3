@@ -9,7 +9,7 @@ var status = 'open'
 func _ready():
 	add_to_group("orders")
 	
-	set_global_position(Vector2((id-1)*250,900))
+	set_position(Vector2(0,(id-1)*150))
 	get_node("Description").text = "Destination: ("+str(destination.x)+","+str(destination.y)+")"
 	get_node("StatusText").text = status
 	pass
@@ -28,19 +28,19 @@ func start():
 		get_node('Button').hide()
 		get_node("StatusText").text = status
 		
-		var currentShips = get_parent().currentShips
+		var currentShips = get_parent().get_parent().currentShips
 		for selectedId in selected:
 			var shipId = list.get_item_metadata(selectedId)
 			var ship   = currentShips[shipId]
 			ship.start(self)
 	
-		get_parent().updateOrders()
+		get_parent().get_parent().updateOrders()
 	pass
 
 func stop():
 	status = 'complited'
 	get_node("StatusText").text = status
-	get_parent().updateOrders()
+	get_parent().get_parent().updateOrders()
 	
 	pass
 	
@@ -48,7 +48,7 @@ func updateList():
 	var list = get_node('List')
 	list.clear()
 	
-	var currentShips = get_parent().currentShips
+	var currentShips = get_parent().get_parent().currentShips
 	for shipId in currentShips:
 		var ship : Ship = currentShips[shipId]
 		if(ship.status == 'free'):

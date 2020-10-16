@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "CanvasLayer",
-"class": "GlobalCanvasLayer",
-"language": "GDScript",
-"path": "res://scripts/GlobalCanvasLayer.gd"
-}, {
 "base": "Node2D",
 "class": "Map",
 "language": "GDScript",
@@ -90,7 +85,6 @@ _global_script_classes=[ {
 "path": "res://scripts/Viewport.gd"
 } ]
 _global_script_class_icons={
-"GlobalCanvasLayer": "",
 "Map": "",
 "OrbitData": "",
 "Planet": "",
@@ -111,13 +105,20 @@ _global_script_class_icons={
 [application]
 
 config/name="Tycoon"
-run/main_scene="res://scenes/Game.tscn"
+run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+GlobalCanvasLayer="*res://scenes/GlobalCanvasLayer.tscn"
 
 [display]
 
 window/size/width=1920
 window/size/height=1080
+window/dpi/allow_hidpi=true
+window/vsync/use_vsync=false
+window/stretch/mode="2d"
 
 [rendering]
 
